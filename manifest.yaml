@@ -1,0 +1,33 @@
+applications:
+
+  # Application
+  - name: iot
+    instance: 1
+    path: srv
+    routes:
+      - route: iot.cfapps.us10-001.hana.ondemand.com
+    memory: 128M
+    timeout: 180
+    buildpacks:
+      - nodejs_buildpack
+    services:
+      - xsuaa-iot
+  #Approuter
+  - name: approuter-iot
+    path: approuter
+    routes:
+      - route: approuter-iot.cfapps.us10-001.hana.ondemand.com
+    memory: 128M
+    buildpacks:
+      - nodejs_buildpack
+    services:
+      - xsuaa-iot
+    env:
+      destinations: >
+        [
+          {
+            "name": "iot-dest",
+            "url": "https://iot.cfapps.us10-001.hana.ondemand.com",            
+            "forwardAuthToken": true
+          }
+        ]

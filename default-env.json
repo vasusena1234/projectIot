@@ -1,0 +1,19 @@
+{
+    "VCAP_SERVICES": {
+      "xsuaa": [
+        {
+          "name": "xsuaa-iot",
+          "label": "xsuaa",
+          "tags": [
+            "xsuaa"
+          ],
+          "credentials": {
+            "clientid": "sb-employee-list!t151106",
+            "clientsecret": "W8zLqKjkwLOzy8XIlZaSoLnuX98=",
+            "url": "https://9d0546a7trial.authentication.us10.hana.ondemand.com"
+          }
+        }
+      ]
+    }
+  }
+  
